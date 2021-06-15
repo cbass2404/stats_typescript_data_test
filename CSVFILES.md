@@ -1,5 +1,27 @@
+# CSV Files
+
+[Documentation](https://nodejs.org/api)
+
+# Load
+
+-   filesystem
+    -   fs.readFileSync(path[,options])
+
+```
+$ npm install @types/node
+```
+
+```javascript
 import fs from 'fs';
 
+const matches = fs.readFileSync('football.csv', {
+    encoding: 'utf-8', // tells readFileSync to return a string
+});
+```
+
+# Parse
+
+```javascript
 const matches = fs
     .readFileSync('football.csv', {
         encoding: 'utf-8', // tells readFileSync to return a string
@@ -8,7 +30,11 @@ const matches = fs
     .map((row: string): string[] => {
         return row.split(',');
     });
+```
 
+# Analyze
+
+```javascript
 let manUnitedWins = 0;
 
 for (let match of matches) {
@@ -18,5 +44,10 @@ for (let match of matches) {
         manUnitedWins++;
     }
 }
+```
 
-console.log(`Man United won ${manUnitedWins} games.`);
+# Report
+
+```javascript
+console.log(manUnitedWins);
+```
