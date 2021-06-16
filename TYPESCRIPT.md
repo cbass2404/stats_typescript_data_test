@@ -850,3 +850,21 @@ enum MatchResult {
 }
 MatchResult.HomeWin
 ```
+
+## Type Assertion
+
+-   You as the developer are trying to over ride the typescript
+
+```javascript
+.map((row: string[]): MatchData => {
+                return [
+                    dateStringToDate(row[0]),
+                    row[1],
+                    row[2],
+                    parseInt(row[3]),
+                    parseInt(row[4]),
+                    row[5] as MatchResult,
+                    row[6],
+                ];
+            });
+```
