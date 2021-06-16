@@ -868,3 +868,22 @@ MatchResult.HomeWin
                 ];
             });
 ```
+
+## Generics
+
+-   like function arguments but for types in class/function definitions
+-   allows us to define the type of a property/argument/return value at a future point
+-   used heavily when writing reusable code
+
+```javascript
+class HoldAnything<TypeOfData>{
+    data: TypeOfData;
+}
+
+const holdNumber = new HoldAnything<number>();
+
+// subclass
+type MatchData = [Date, string, string, number, number, MatchResult, string];
+
+export class MatchReader extends CsvFileReader<MatchData> {
+```
