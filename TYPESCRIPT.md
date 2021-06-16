@@ -887,3 +887,15 @@ type MatchData = [Date, string, string, number, number, MatchResult, string];
 
 export class MatchReader extends CsvFileReader<MatchData> {
 ```
+
+## Inheritance vs Composition
+
+-   Inheritance:
+
+    -   parent class has core functions inherited by subclass
+    -   characterized by an 'is a' relationship between two classes
+
+-   Composition:
+
+    -   no class is relying on the other permanently, completely swappable
+    -   characterized by a 'has a' relationship between two classes
